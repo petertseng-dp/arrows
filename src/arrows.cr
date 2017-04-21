@@ -45,7 +45,7 @@ def find_cycle(grid : Array(Array(Direction))) : Tuple(Int32, Array(Point))
   cols = grid[0].size
   bounds = {grid.size, cols}
 
-  unmarked_points = Set.new(grid.each_with_index.flat_map { |row, y|
+  unmarked_points = Set.new(grid.each_with_index.flat_map { |(row, y)|
     raise "Uneven board: row 0 size #{cols}, row #{y} size #{row} " unless row.size == cols
     (0...row.size).map { |x| {y, x} }
   })
